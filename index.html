@@ -1,11 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-　<meta charset="UTF-8">
-  <title>Audio QR</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audio QR</title>
 </head>
 <body>
-  <h1>Audio QR</h1>
-  <p>サイト作成成功！</p>
+
+<h1>Audio QR</h1>
+
+<p>M4AファイルのURLからQRコードを生成</p>
+
+<input type="text" id="url" placeholder="URLを入力">
+
+<button onclick="generateQR()">
+QRコード生成
+</button>
+
+<div id="qr"></div>
+
+<script>
+function generateQR() {
+  const url = document.getElementById("url").value;
+
+  document.getElementById("qr").innerHTML =
+  `<img src="https://api.qrserver.com/v1/create-ize=250x250&data=${encodeURIComponent(url)}`;
+}
+</script>
+
 </body>
 </html>
