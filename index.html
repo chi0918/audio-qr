@@ -60,7 +60,7 @@ return;
 }
 
 document.getElementById("qr").innerHTML =
-`server.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(url)}">`;
+'api.qrserver.com/v1/create-qr-code/?size=250x250&data='+ encodeURIComponent(url) +
 
 }
 </script>
