@@ -59,8 +59,8 @@ alert("URLを入力してください");
 return;
 }
 
-document.getElementById("qr").innerHTML=
-`<img src="https://api.qrserver.com/v1/create-qr-code/250&data=${encodeURIComponent(url)}`;
+document.getElementById("qr").innerHTML =
+`https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(url)}`;
 
 }
 </script>
