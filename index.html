@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Audio QR</title>
+<title>Audio QR Generator</title>
 
 <style>
 body{
-  font-family: sans-serif;
+  font-family:sans-serif;
   text-align:center;
   margin:30px;
 }
@@ -21,6 +21,7 @@ input{
 button{
   margin-top:10px;
   padding:10px 20px;
+  cursor:pointer;
 }
 
 #qr img{
@@ -50,21 +51,20 @@ QRコード生成
 <div id="qr"></div>
 
 <script>
-function generateQR(){
+function generateQR() {
 
-const url=document.getElementById("url").value;
+  const url =
+  document.getElementById("url").value;
 
-if(!url){
-alert("URLを入力してください");
-return;
+  if (!url) {
+    alert("URLを入力してください");
+    return;
+　}
+  
+  document.getElementById("qr").innerHTML =
+    '<ttps://api.qrserver.com/v1/create-qr-code/?size=250x250&data=';
 }
+　</script>
 
-document.getElementById("qr").innerHTML =
-'.qrserver.com/v1/create-qr-code/?size=250x250&data='+ encodeURIComponent(url) +
-'">';
-
-}
-</script>
-
-</body>
-</html>
+  </body>
+  </html>
