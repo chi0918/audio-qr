@@ -4,14 +4,44 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Audio QR</title>
+
+<style>
+body{
+  font-family: sans-serif;
+  text-align:center;
+  margin:30px;
+}
+
+input{
+  width:80%;
+  max-width:600px;
+  padding:10px;
+}
+
+button{
+  margin-top:10px;
+  padding:10px 20px;
+}
+
+#qr img{
+  margin-top:20px;
+}
+</style>
+
 </head>
+
 <body>
 
-<h1>Audio QR</h1>
+<h1>Audio QR Generator</h1>
 
-<p>M4AファイルのURLからQRコードを生成</p>
+<p>OneDriveやTeamsの共有URLを貼り付けてください</p>
 
-<input type="text" id="url" placeholder="URLを入力">
+<input
+type="text"
+id="url"
+placeholder="共有リンクを入力">
+
+<br>
 
 <button onclick="generateQR()">
 QRコード生成
@@ -20,11 +50,18 @@ QRコード生成
 <div id="qr"></div>
 
 <script>
-function generateQR() {
-  const url = document.getElementById("url").value;
+function generateQR(){
 
-  document.getElementById("qr").innerHTML =
-  `<img src="https://api.qrserver.com/v1/create-ize=250x250&data=${encodeURIComponent(url)}`;
+const url=document.getElementById("url").value;
+
+if(!url){
+alert("URLを入力してください");
+return;
+}
+
+document.getElementById("qr").innerHTML=
+`<img src="https://api.qrserver.com/v1/create-qr-code/250&data=${encodeURIComponent(url)}`;
+
 }
 </script>
 
