@@ -62,7 +62,9 @@ function generateQR() {
 　}
   
   document.getElementById("qr").innerHTML =
-  'https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=';
+  '<img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=' +
+  encodeURIComponent(url) +
+  '">';
 }
 　</script>
 
